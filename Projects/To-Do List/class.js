@@ -1,3 +1,4 @@
+// Define a Task class to represent individual tasks
 class Task {
     constructor(id, name, completed) {
         this.id = id;
@@ -6,14 +7,19 @@ class Task {
     }
 }
 
+// Define a TaskManager class to handle tasks and interactions
 class TaskManager {
     constructor() {
+        // Initialize savedTasks array from local storage or create an empty array
         this.savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        
+        // Get DOM elements
         this.taskContainer = document.querySelector("#tasks");
         this.newTaskInput = document.querySelector(".textInput");
         this.error = document.querySelector("#error");
         this.addBtn = document.querySelector("#add-btn");
 
+        // Add event listeners for the "Add" button and Enter key press
         this.addBtn.addEventListener("click", this.addTask.bind(this));
         this.newTaskInput.addEventListener("keypress", (event) => {
             if (event.keyCode === 13) {
@@ -21,13 +27,16 @@ class TaskManager {
             }
         });
 
+        // Load tasks from local storage and render them
         this.loadTasks();
     }
 
+    // Update local storage with the current savedTasks array
     updateLocalStorage() {
         localStorage.setItem('tasks', JSON.stringify(this.savedTasks));
     }
 
+    // Load tasks from savedTasks and render them on the page
     loadTasks() {
         this.savedTasks.forEach(savedTaskData => {
             const task = new Task(savedTaskData.id, savedTaskData.name, savedTaskData.completed);
@@ -35,7 +44,9 @@ class TaskManager {
         });
     }
 
+    // Render a task on the page
     renderTask(task) {
+        // Create task element and its components
         const taskElement = document.createElement("section");
         taskElement.classList.add("task");
 
@@ -60,11 +71,13 @@ class TaskManager {
         deleteButton.classList.add("delete");
         deleteButton.textContent = "delete";
 
+        // Append elements to the task container
         taskElement.appendChild(checkbox);
         taskElement.appendChild(taskNameElement);
         taskElement.appendChild(editButton);
         taskElement.appendChild(deleteButton);
 
+        // Set up event handlers for interactions
         checkbox.onchange = () => {
             task.completed = checkbox.checked;
             taskNameElement.classList.toggle("completed");
@@ -91,9 +104,11 @@ class TaskManager {
             }
         };
 
+        // Append the task element to the task container
         this.taskContainer.appendChild(taskElement);
     }
 
+    // Add a new task
     addTask() {
         const taskName = this.newTaskInput.value.trim();
         this.error.style.display = "none";
@@ -104,15 +119,22 @@ class TaskManager {
             return;
         }
 
+        // Generate a unique ID for the new task
         const taskId = Date.now().toString();
+
+        // Create a new Task object and add it to savedTasks
         const task = new Task(taskId, taskName, false);
         this.savedTasks.push(task);
+        
+        // Update local storage and render the new task
         this.updateLocalStorage();
         this.renderTask(task);
 
+        // Clear the input field and set focus
         this.newTaskInput.value = "";
         this.newTaskInput.focus();
     }
 }
 
+// Create an instance of the TaskManager class to start the app
 const taskManager = new TaskManager();

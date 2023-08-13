@@ -10,6 +10,7 @@ const updateLocalStorage = () => {
     localStorage.setItem('tasks', JSON.stringify(savedTasks));
 };
 
+// Main Function
 const addTask = () => {
     const taskName = newTaskInput.value.trim();
     error.style.display = "none";
@@ -39,7 +40,8 @@ const addTask = () => {
                     <button class="delete">delete</button>
                   </section>`;
     taskContainer.insertAdjacentHTML("beforeend", task);
-
+    
+    // Check Task function
     const taskCheck = taskContainer.lastElementChild.querySelector("input[type='checkbox']");
     const taskNameElement = taskContainer.lastElementChild.querySelector(".task-name");
 
@@ -52,6 +54,7 @@ const addTask = () => {
         }
     };
 
+    // Delete Task function
     const deleteBtn = taskContainer.lastElementChild.querySelector(".delete");
     deleteBtn.onclick = () => {
         deleteBtn.parentNode.remove();
@@ -62,6 +65,7 @@ const addTask = () => {
         }
     };
 
+    // Edit Task Function
     const editBtn = taskContainer.lastElementChild.querySelector(".edit");
     editBtn.onclick = (e) => {
         let targetElement = e.target;

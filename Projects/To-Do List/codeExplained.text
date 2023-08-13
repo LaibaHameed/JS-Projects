@@ -1,0 +1,28 @@
+Initialization:
+We start by selecting important elements on the webpage using document.querySelector(). These elements include the input field, the "Add" button, the task container, and other elements.
+
+Saved Tasks:
+We create a variable called savedTasks that will hold our task data. We try to load any previously saved tasks from the local storage using localStorage.getItem('tasks'). If no tasks are found, we create an empty array.
+
+Update Local Storage Function:
+We define a function called updateLocalStorage that will help us update the saved tasks in the local storage whenever there's a change. It converts the savedTasks array to a JSON string and stores it in the local storage under the key 'tasks'.
+
+Adding a Task:
+When the "Add" button is clicked, we take the text from the input field and trim any extra spaces. If the text is empty, we show an error message. If not, we generate a unique ID for the new task and create a task data object containing its ID, name, and completion status.
+We push this task data object into the savedTasks array, call updateLocalStorage to save it in local storage, and then update the display to show the new task.
+
+Loading Tasks from Local Storage:
+When the page loads, we loop through the savedTasks array. For each task data object, we create the HTML elements for the task, including the checkboxes, task name, "Edit" button, and "Delete" button.
+We attach event handlers to the checkboxes, "Edit" buttons, and "Delete" buttons. These handlers will later be responsible for updating local storage and the display when tasks are edited, checked, or deleted.
+
+Checkbox, Edit, and Delete Event Handlers:
+For each task, we set up event handlers for its checkbox, "Edit" button, and "Delete" button. When a checkbox is changed (checked or unchecked), we toggle the completed class for the task name and update the completion status in local storage.
+When the "Edit" button is clicked, we allow the user to edit the task name. After editing, we update the task name in local storage and the display.
+When the "Delete" button is clicked, we remove the task from the display and update local storage.
+
+Adding and Enter Key:
+We've also set up an event listener for the Enter key (key code 13) on the input field. When the Enter key is pressed, it triggers the same "Add" task function, allowing users to add tasks by pressing Enter as well.
+
+Final Touches:
+When the page finishes loading, we clear the input field by setting its value to an empty string.
+This code works by managing a list of tasks in the savedTasks array. Whenever a task is added, edited, checked, or deleted, it updates the array and local storage accordingly. The code dynamically creates and updates the task elements in the HTML based on this array, ensuring that changes are reflected in both the user interface and local storage.

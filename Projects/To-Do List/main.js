@@ -54,7 +54,12 @@ const addTask = () => {
     newTaskInput.value = "";
 }
 
-addBtn.addEventListener("click", addTask)
+addBtn.addEventListener("click", addTask);
+newTaskInput.addEventListener('keypress', () => {
+	if(event.keyCode === 13){
+        addTask();
+}
+})
 
 
 window.onload = () => {

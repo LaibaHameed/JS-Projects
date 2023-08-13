@@ -1,0 +1,295 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100;1,200&display=swap');
+
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #dde9e7;
+}
+
+.app {
+    font-family: 'Montserrat', sans-serif;
+    width: min(100vw, 50em);
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 3em;
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 1em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    padding: 2em 2.5em;
+    border-radius: 25px;
+    background: linear-gradient(315deg, #ecf9f7, #c7d2d0);
+    box-shadow: -16px -16px 60px #c2cdcb,
+        16px 16px 60px #f8ffff;
+}
+
+#wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+    gap: 1em;
+}
+
+.textInputWrapper {
+    position: relative;
+    width: 100%;
+    --accent-color: #111111;
+  }
+  
+  .textInputWrapper:before,
+  .textInputWrapper:after {
+    content: "";
+    left: 0;
+    right: 0;
+    position: absolute;
+    pointer-events: none;
+    bottom: -1px;
+    z-index: 4;
+    width: 100%;
+  }
+  
+  .textInputWrapper:focus-within:before {
+    border-bottom: 1px solid var(--accent-color);
+  }
+  
+  .textInputWrapper:before {
+    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+  }
+  
+  .textInputWrapper:focus-within:before {
+    border-bottom: 1px solid var(--accent-color);
+    transform: scaleX(1);
+  }
+  
+  .textInputWrapper:focus-within:after {
+    border-bottom: 2px solid var(--accent-color);
+    transform: scaleX(1);
+  }
+  
+  .textInputWrapper:after {
+    content: "";
+    transform: scaleX(0);
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    will-change: transform;
+    border-bottom: 2px solid var(--accent-color);
+    border-bottom-color: var(--accent-color);
+  }
+  
+  .textInput::placeholder {
+    transition: opacity 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    opacity: 1;
+    user-select: none;
+    color: #848b8d;
+    font-weight: 400;
+  }
+  
+  .textInputWrapper .textInput {
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0px 2px 5px rgba(230, 234, 235, 0.3);
+    background-color: transparent;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 200ms;
+    transition-property: background-color;
+    color: black;
+    font-weight: 500;
+    padding: 0.5em;
+    font-size: 1em;
+    padding: 12px;
+    width: 100%;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0.5em;
+  }
+  
+  .textInputWrapper .textInput:focus,
+  .textInputWrapper .textInput:active {
+    outline: none;
+  }
+  
+  .textInputWrapper:focus-within .textInput,
+  .textInputWrapper .textInput:focus,
+  .textInputWrapper .textInput:active {
+    background-color: transparent;
+  }
+  
+  .textInputWrapper:focus-within .textInput::placeholder {
+    opacity: 0;
+  }
+
+button {
+    position: relative;
+    margin: 0;
+    padding: 0.5em 0.8em;
+    outline: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    background-color: #333;
+    border-radius: 15px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 1em;
+    font-weight: 400;
+    font-family: inherit;
+    z-index: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  }
+  
+  button:hover {
+    animation: sh0 0.5s ease-in-out both;
+  }
+  
+  @keyframes sh0 {
+    0% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+  
+    25% {
+      transform: rotate(7deg) translate3d(0, 0, 0);
+    }
+  
+    50% {
+      transform: rotate(-7deg) translate3d(0, 0, 0);
+    }
+  
+    75% {
+      transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+  
+    100% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+  }
+  
+  button:hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+  }
+  
+  button::before,
+  button::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0;
+    transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+    z-index: -1;
+    transform: translate(100%, -25%) translate3d(0, 0, 0);
+  }
+  
+  button:hover::before,
+  button:hover::after {
+    opacity: 0.15;
+    transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+  }
+  
+  button:hover::before {
+    transform: translate3d(50%, 0, 0) scale(0.9);
+  }
+  
+  button:hover::after {
+    transform: translate(50%, 0) scale(1.1);
+  }
+  
+#tasks{
+    margin-top: 1em;
+    border-radius: 0.5em;
+    width: 100%;
+    position: relative;
+    padding: 1em 0.5em;
+}
+
+.task{
+background-color: transparent;
+padding: 0.5em 0.6em;
+margin: 0.5em 0;
+display: grid;
+grid-template-columns: 1fr 8fr 2fr 2fr;
+gap: 0.5em;
+border-radius: 0.5em;
+align-items: center;
+cursor: pointer;
+}
+
+.task input[type = "checkbox"]{
+    position: relative;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border:1px solid rgba(0, 0, 0, 0.42) ;
+    cursor: pointer;
+}
+
+.task input[type = "checkbox"]:before{
+    content: "";
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.task input[type = "checkbox"]:checked{
+    background-color: #111111;
+    border-color:#111111 ;
+}
+
+.task input[type = "checkbox"]:checked:before{
+    position: absolute;
+    content: "\f00c";
+    color: #ffffff;
+    font-size: 0.8em;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.completed{
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.753);
+}
+
+.task-name{
+    font-size: 1.1em;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+
+#error{
+text-align: center;
+color: rgb(206, 36, 36);
+text-transform: capitalize;
+margin-top: 1.5em;
+display: none;
+font-size: 1em;
+font-weight: 400;
+}
+  

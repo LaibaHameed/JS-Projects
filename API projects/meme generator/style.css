@@ -1,0 +1,32 @@
+.meme-box {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.meme-btn {
+    font-size: 20px;
+    letter-spacing: 1px;
+    border: none;
+    font-weight: 700;
+    color: cadetblue;
+    background-color: rgba(253, 245, 230, 0.466) ;
+    padding: 15px;
+    margin: 20px;
+    border-left: 4px solid cadetblue;
+    border-right: 4px solid cadetblue;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+}
+
+.meme-btn:hover {
+    letter-spacing: 4px;
+}
+
+.meme-img {
+    height: 430px;
+    object-fit: cover;
+}
+
+.meme-author {
+    margin: 8px;
+}

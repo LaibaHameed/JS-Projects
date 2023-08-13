@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji change</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .emoji{
+            font-size: 10rem;
+            cursor: pointer;
+            user-select: none;
+        }
+        .eyes{
+            display: none;
+        }
+        .mouth{
+            display: none;
+        }
+        .ears{
+            display: none;
+        }
+        .active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="emoji eyes active">🙈</div>
+    <div class="emoji mouth">🙊</div>
+    <div class="emoji ears">🙉</div>
+
+
+    <script>
+
+        let eyesHide = document.querySelector(".eyes");
+        let mouthHide = document.querySelector(".mouth");
+        let earsHide = document.querySelector(".ears");
+
+
+        eyesHide.addEventListener("click", () => {
+            if(mouthHide.classList.contains("mouth")){
+                    mouthHide.classList.add('active');
+                    eyesHide.classList.remove('active');
+            }
+        })
+
+        mouthHide.addEventListener("click", () => {
+            if(earsHide.classList.contains("ears")){
+                    earsHide.classList.add('active');
+                    mouthHide.classList.remove('active');
+            }
+        })
+
+        earsHide.addEventListener("click", () => {
+            if(eyesHide.classList.contains("eyes")){
+                    eyesHide.classList.add('active');
+                    earsHide.classList.remove('active');
+            }
+        })
+
+    </script>
+</body>
+</html>

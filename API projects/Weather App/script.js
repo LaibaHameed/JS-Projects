@@ -51,3 +51,9 @@ searchBox.addEventListener('keypress', () => {
 	checkWeather(searchBox.value);
 }
 })
+
+
+
+
+
+

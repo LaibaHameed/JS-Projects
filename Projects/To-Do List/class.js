@@ -52,7 +52,6 @@ class TaskManager {
 
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
-        checkbox.name = "";
         checkbox.id = task.id;
         checkbox.checked = task.completed;
 

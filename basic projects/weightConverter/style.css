@@ -1,0 +1,61 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    height: 100vh;
+}
+h1{
+    text-align: center;
+    margin: 1.5em 0em;
+    font-family: 'Roboto Mono', monospace;
+    color: #0E0E0E;
+  }
+.container{
+    width: 400px;
+    height: 460px;
+    transition: all 0.2s;
+    cursor: pointer;
+    position: absolute;
+    margin: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #C5AB63;
+    border-radius: 2em;
+    box-shadow:1em 1em 1em #0e0e0ec7;
+
+}
+
+.card{
+margin: 2em 3.5em;
+}
+
+.card > .warpper {
+    margin:1.5em 0em ;
+}
+
+label {
+   color: #0E0E0E;
+   font-size: 1.2em;
+   font-weight: 600;
+   font-family: 'Roboto Mono', monospace;
+   margin-top: 2em;
+
+}
+.card > .warpper > input {
+    display: block;
+    width: 90%;
+    height: 2.5em;
+    font-size: 1em;
+    padding: 2px 8px;
+    margin: 0.5em 0.5em;
+    outline: none;
+    border: 1px solid #0E0E0E;
+    border-radius: 10px;
+}

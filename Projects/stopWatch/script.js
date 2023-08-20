@@ -76,3 +76,15 @@ let resetClicked = () => {
 startBtn.addEventListener('click', startClicked);
 pauseBtn.addEventListener('click', pauseClicked);
 resetBtn.addEventListener('click', resetClicked);
+
+
+
+
+
+
+
+
+
+
+
+

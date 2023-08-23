@@ -41,14 +41,14 @@ function getRandomImageUrl() {
   const randomIndex = Math.floor(Math.random() * imageUrls.length);
   return imageUrls[randomIndex];
 } 
-console.log(getRandomImageUrl());
+// console.log(getRandomImageUrl());
 
 let apiUrl = "https://kontests.net/api/v1/all";
 let response = fetch(apiUrl);
 response.then( (value) => {
     return value.json()
 }).then( (contests) => {
-    console.log(contests)
+    // console.log(contests)
 
     iHTML = ""
     for(items in contests){

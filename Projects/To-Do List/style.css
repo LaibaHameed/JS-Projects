@@ -9,8 +9,8 @@
 }
 
 body {
-    height: 100vh;
     background: #dde9e7;
+    overflow-x: hidden;
 }
 
 .app {
@@ -31,6 +31,7 @@ h1{
 
 .container {
     padding: 2em 2.5em;
+    margin-bottom: 4em;
     border-radius: 25px;
     background: linear-gradient(315deg, #ecf9f7, #c7d2d0);
     box-shadow: -16px -16px 60px #c2cdcb,

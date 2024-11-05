@@ -1,17 +1,34 @@
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0; /* Optional background color */
+}
+
+.container {
+  width: 90%; /* Use a percentage width for better responsiveness */
+  max-width: 500px; /* Limit the maximum width */
+}
+
+.stopwatch {
+  text-align: center;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+.btn {
+  width: 100%; /* Make buttons full width */
+  margin-bottom: 10px; /* Add some spacing between buttons */
+}
+
+/* @media (min-width: 580px) {
+  .btn {
+      width: auto; 
+      margin: 0 5px; 
   }
-  
-  .stopwatch {
-    text-align: center;
-  }
-  
-  .buttons {
-    margin-top: 10px;
-  }
-  
+} */
